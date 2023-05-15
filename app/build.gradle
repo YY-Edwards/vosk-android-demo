@@ -16,7 +16,7 @@ android {
         versionName "1.1"
         ndkVersion = "25.2.9519653"
         ndk {
-            abiFilters 'armeabi-v7a', 'arm64-v8a', 'x86_64', 'x86'
+            abiFilters 'x86_64','arm64-v8a'
         }
     }
     buildTypes {
@@ -33,6 +33,8 @@ android {
 
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.3.1'
+    //have to get jniLibs(android-) from jna-5.8.0, or it throw out errors like: version unmatched, cannot find specific lib
+    implementation group: 'net.java.dev.jna', name: 'jna', version: '5.8.0'
     implementation group: 'com.alphacephei', name: 'vosk-android', version: '0.3.46'
     implementation project(':models')
 }

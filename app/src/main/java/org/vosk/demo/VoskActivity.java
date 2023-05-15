@@ -69,7 +69,7 @@ public class VoskActivity extends Activity implements
         findViewById(R.id.recognize_mic).setOnClickListener(view -> recognizeMicrophone());
         ((ToggleButton) findViewById(R.id.pause)).setOnCheckedChangeListener((view, isChecked) -> pause(isChecked));
 
-        LibVosk.setLogLevel(LogLevel.INFO);
+        LibVosk.setLogLevel(LogLevel.DEBUG);
 
         // Check if user has given permission to record audio, init the model after permission is granted
         int permissionCheck = ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.RECORD_AUDIO);
